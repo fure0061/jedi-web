@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!-- <div class="container"></div> -->
+    <div class="jumbotron text-center">
+        <h1>jedi-maths</h1>
+        <p class="lead">Mathematics academy</p>
+    </div>
+    <div class="card-deck mb-3 text-center">
+        {% for group in groups %}
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h3 class="my-0 font-weight-normal">{{group.type}}</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li><a href="groups/{{group.id}}/">Schedule</a></li>
+                        <li><a href="groups/hw/{{group.id}}/">Homework</a></li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

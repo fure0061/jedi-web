@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Schedule of group {{group.type}}</h1>
+    </div>
+    <ul class="list-group">
+    {% for time in group.schedule %}
+        <li class="list-group-item">{{time}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

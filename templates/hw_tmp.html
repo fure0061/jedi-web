@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+
+{% block navbar %}
+<div class="jumbotron text-center">
+    <h1>Homework for group {{group.type}}</h1>
+</div>
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                Titles:
+            </li>
+            {%for title in group.hw%}
+            <li class="nav-item">
+                <a class="nav-link" href="/groups/hw/{{group.id}}/{{title}}">{{title}}</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block task%} {% endblock %}
